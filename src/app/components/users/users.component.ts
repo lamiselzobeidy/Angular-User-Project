@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {User} from '../../models/User'
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
+  template:`<app-user-profile [users] = "users"></app-user-profile>`,
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
@@ -16,13 +17,27 @@ export class UsersComponent implements OnInit {
     this.users= [
       {
         id:1,
-        firstname:'lamis'
+        firstname:'lamis',
+        email: 'lamis@gmail.com',
+        age:23
       },
       {
         id:2,
-        firstname:'mariam'
+        firstname:'mariam',
+        email: 'mariam@gmail.com',
+        age:23
+      },
+      {
+        id:3,
+        firstname:'nour',
+        email: 'nour@gmail.com',
+        age:23
       }
     ]
   }
-
+  activeuser:User;
+  selectUser(user) {
+    this.activeuser = user;
+    console.log(this.activeuser);
+  }
 }
