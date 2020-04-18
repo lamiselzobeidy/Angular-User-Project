@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Add User Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
 <body>
-
-    
+  <div>
   <form>
-    <div style="margin-bottom: 10px;" align="center"><h1>Add new User!</h1></div>
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-    <label for="email">Email</label>
-    <input type="text" id="email" name="email" placeholder="Your email..">
-
-    <label for="age">Age</label>
-    <input type="text" id="age" name="age" placeholder="Your age..">
-    <div align="center">
-    <button routerLink="/users" style="margin-top: 10px;"type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+      <h2>Add a new User !</h2>
     </div>
+    <div class="form-group">
+      <label for="exampleInputName">Name</label>
+      <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputAge">Age</label>
+      <input type="number" class="form-control" id="exampleInputAge">
+    </div>
+    
+    <button routerLink="/users" (click)="addUser()" type="submit" class="btn btn-info">Add</button>
   </form>
-
+</div>
 </body>
 </html>

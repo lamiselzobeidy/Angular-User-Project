@@ -1,6 +1,15 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-  
+h2{
+    font-family: 'Lobster', cursive;
+    text-align: center;
+}
+body{
+    height: 640px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  background-image: url('./back.jpg');
 }
 form {
     margin-top: 90px;
@@ -11,13 +20,15 @@ form {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+    border: 2px solid #29c2ff;
+    border-radius: 4px;
 
 }
 
 input {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 4px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -29,6 +40,13 @@ input[type=range]
 }
 
 label {
+    font-family: 'Source Serif Pro', serif;
     cursor: pointer;
     margin-left: auto;
+}
+button{
+    font-weight: bold;
+    width: 70px;
+    font-family: 'Source Serif Pro', serif;    margin: 0 auto;
+    display: block;
 }

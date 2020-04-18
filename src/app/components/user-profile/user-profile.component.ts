@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { User } from '../../models/User';
 import { UsersComponent } from '../users/users.component'
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -8,15 +9,14 @@ import { UsersComponent } from '../users/users.component'
   styleUrls: ['./user-profile.component.css']
 })
 
-export class UserProfileComponent implements AfterViewInit {
-  @ViewChild(UsersComponent) users;
-  userss:User[];
+export class UserProfileComponent implements OnInit {
+  users:User[];
   lamis:string;
-  constructor() { 
+  constructor(private _userService : UserService) { 
     this.lamis = "lamis"
   }
-  ngAfterViewInit() {
-    this.userss = this.users.users;
+  ngOnInit() {
+    this.users= this._userService.getUsers();
     
   }
 
