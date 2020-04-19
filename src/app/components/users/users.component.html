@@ -14,11 +14,11 @@
 
 <div id="userProfile" class="col-8">
   <div align="center" class="jumbotron" *ngIf="activeuser">
-    <h2>{{ activeuser.firstname }}</h2>
+    <h2 id="profileFirstname">{{ activeuser.firstname }}</h2>
     <h6>Email: {{ activeuser.email }}</h6>
     <h6>Age: {{ activeuser.age }}</h6>
-    <button id="edit" class="btn btn-info">Edit</button>
-    <button id="delete" class="btn btn-danger">Delete</button>
+    <button routerLink="/users"  id="edit" class="btn btn-info">Edit</button>
+    <button (click)="deleteUser()" routerLink="/users" id="delete" class="btn btn-danger">Delete</button>
   </div>
   <div align="center" class="jumbotron" *ngIf="!activeuser">
     <img src="assets/images/left.png" id="left" alt="left-hand">

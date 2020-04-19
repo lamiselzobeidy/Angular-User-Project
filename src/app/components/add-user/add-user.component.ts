@@ -15,9 +15,7 @@ export class AddUserComponent implements OnInit {
     email: undefined,
     age: undefined
   };
-  firstname;
-  email;
-  age;
+
   constructor(private _userService : UserService) {
    }
 

@@ -4,15 +4,26 @@ import { User } from './models/User';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
-  users:User[] =[];
-  constructor() { 
+  users: User[] = [];
+  deletedUser: User;
+  constructor() {
   }
 
-  getUsers(){
+  getUsers() {
     return this.users;
   }
-  setUsers(user){
+
+  setUsers(user) {
     this.users.push(user);
+  }
+
+  deleteUser(user) {
+    for (var i = this.users.length - 1; i >= 0; i--) {
+      if (this.users[i].firstname == user.firstname) {
+        this.users.splice(i, 1);
+      }
+    }
   }
 }

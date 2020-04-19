@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     AppComponent,
     routingComponents,
     NavBarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
