@@ -26,4 +26,15 @@ export class UserService {
       }
     }
   }
+
+  updateUser(user){
+    for (var i = this.users.length - 1; i >= 0; i--) {
+      if (this.users[i].id == user.id) {
+        console.log("hiiii");
+        this.users[i].firstname == user.firstname;
+        this.users[i].email == user.email;
+        this.users[i].age == user.age;
+      }
+    }
+  }
 }

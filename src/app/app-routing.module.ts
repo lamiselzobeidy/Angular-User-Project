@@ -1,24 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UsersComponent} from './components/users/users.component'
-import { UserProfileComponent} from './components/user-profile/user-profile.component'
-import { AddUserComponent } from './components/add-user/add-user.component'
-import { NavBarComponent } from './components/nav-bar/nav-bar.component'
-import { HomeComponent } from './components/home/home.component'
+import { UsersComponent } from './components/users/users.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import { HomeComponent } from './components/home/home.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 
 const routes: Routes = [
   {
-    path: 'users', component:UsersComponent
+    path: 'users', component: UsersComponent
   },
   {
-    path: 'user-profile', component:UserProfileComponent
+    path: 'add-user', component: AddUserComponent
   },
   {
-    path: 'add-user', component:AddUserComponent
+    path: 'edit-user', component: EditUserComponent
   },
   {
-    path: '', component:HomeComponent
+    path: '', component: HomeComponent
   }
 ];
 
@@ -27,4 +26,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [UsersComponent, UserProfileComponent, AddUserComponent]
+export const routingComponents = [UsersComponent, AddUserComponent, EditUserComponent]

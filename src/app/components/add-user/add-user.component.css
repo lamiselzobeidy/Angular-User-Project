@@ -5,12 +5,14 @@ h2{
     font-family: 'Lobster', cursive;
     text-align: center;
 }
+
 body{
     height: 640px;
     background-size: cover;
     background-repeat: no-repeat;
   background-image: url('./back.jpg');
 }
+
 form {
     margin-top: 90px;
     width: 50%;
@@ -34,6 +36,7 @@ input {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 input[type=range]
 {
     display: inline;
@@ -44,6 +47,7 @@ label {
     cursor: pointer;
     margin-left: auto;
 }
+
 button{
     font-weight: bold;
     width: 70px;
