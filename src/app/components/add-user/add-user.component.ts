@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { UserService } from 'src/app/user.service';
 import { User } from 'src/app/models/User';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-add-user',
@@ -8,30 +12,38 @@ import { User } from 'src/app/models/User';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
+  private _success = new Subject<string>();
+  staticAlertClosed = false;
+  successMessage = '';
+  profileForm = new FormGroup({
+    firstname: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    age: new FormControl('', Validators.required)
+  });
   users: User[];
-  user: User = {
-    id: undefined,
-    firstname: undefined,
-    email: undefined,
-    age: undefined
-  };
 
-  constructor(private _userService: UserService) {
-  }
+  constructor(private _userService: UserService, private formBuilder: FormBuilder) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.users = this._userService.getUsers();
-
+    setTimeout(() => this.staticAlertClosed = true, 20000);
+    this._success.subscribe(message => this.successMessage = message);
+    this._success.pipe(
+      debounceTime(5000)
+    ).subscribe(() => this.successMessage = '');
   }
-  addUser() {
 
-    console.log(this.users);
-    this.user.id = this.users.length;
-    this.user.firstname = $("form").find('#exampleInputName').val() + "";
-    this.user.email = $("form").find('#exampleInputEmail').val() + "";
-    this.user.age = $("form").find('#exampleInputAge').val() + "";
-    console.log(this.user);
-    this._userService.setUsers(this.user);
+  onSubmit() {
+    this._userService.setUsers(this.profileForm.value);
+    this.profileForm.patchValue({
+      firstname: '',
+      email: '',
+      age: ''
+    });
+    this.profileForm.markAsPristine();
+    this.profileForm.markAsUntouched();
+    this.profileForm.updateValueAndValidity();
+    this._success.next(`${new Date()} - Message successfully changed.`);
   }
 
 }

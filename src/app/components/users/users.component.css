@@ -1,7 +1,11 @@
-body {
-    margin-top: 70px;
-    margin-left: 10px;
-    margin-right: 10px;
+#body {
+    padding-top: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 640px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #f3f6f6;
 }
 
 #left{

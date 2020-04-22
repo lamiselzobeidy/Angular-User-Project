@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-body{
-    margin-top: 200px;
+.body{
+    
+    height: 640px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("bk_home.jpg");
+    
+}
+h1,p{
     font-family: 'Source Serif Pro', serif;
     text-align: center;
 }
+
