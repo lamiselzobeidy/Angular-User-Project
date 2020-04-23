@@ -7,7 +7,6 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HomeComponent } from './components/home/home.component';
-import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 
 
@@ -17,7 +16,6 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     routingComponents,
     NavBarComponent,
     HomeComponent,
-    EditUserComponent,
   ],
   imports: [
     BrowserModule,
